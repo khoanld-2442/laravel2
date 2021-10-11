@@ -51,3 +51,7 @@ jobs:
   coverage:
     type: clover
     path: coverage.xml
+  artifacts:
+    paths:
+    - api/coverage
+    expires_in: 3 days
