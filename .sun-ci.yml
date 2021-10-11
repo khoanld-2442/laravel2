@@ -53,5 +53,5 @@ jobs:
     path: coverage.xml
   artifacts:
     paths:
-    - api/coverage
+    - coverage
     expires_in: 3 days
