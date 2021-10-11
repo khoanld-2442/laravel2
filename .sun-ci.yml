@@ -50,8 +50,8 @@ jobs:
   - composer coverage
   coverage:
     type: clover
-    path: api/coverage.xml
+    path: coverage.xml
   artifacts:
     paths:
-    - api/coverage
+    - coverage
     expires_in: 3 days
