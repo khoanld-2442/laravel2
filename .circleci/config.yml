@@ -50,7 +50,13 @@ jobs:
             mkdir -p ~/phpunit
             ./vendor/bin/phpunit --log-junit ~/phpunit/junit.xml tests
           when: always
+      - run:
+          command: |
+            mkdir -p ~/phpunit
+            phpunit --log-junit ~/phpunit/junit.xml tests
+          when: always
       - store_test_results:
-         path: ~/phpunit
+          path: ~/phpunit
       - store_artifacts:
-         path: ~/phpunit
+          path: ~/phpunit
+
