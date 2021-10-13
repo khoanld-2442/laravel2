@@ -39,7 +39,8 @@ return [
             'driver' => 'sqlite',
             'database' => database_path('database.sqlite'),
             'prefix' => '',
-        ]
+        ],
+        
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
