@@ -45,6 +45,13 @@ jobs:
             php artisan migrate --env=testing
 
       # run tests with phpunit
-      - run:
-          name: "Run Tests"
-          command: ./vendor/bin/phpunit
+      steps:
+        - run:
+            command: |
+              mkdir -p ~/phpunit
+              phpunit --log-junit ~/phpunit/junit.xml tests
+            when: always
+        - store_test_results:
+          path: ~/phpunit
+        - store_artifacts:
+           path: ~/phpunit
