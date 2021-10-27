@@ -73,6 +73,6 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "coverage": "phpunit --log-junit test_result/junit.xml"
+        "coverage": "phpunit --log-junit ./junit.xml"
     }
 }
