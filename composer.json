@@ -73,6 +73,6 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "coverage": "phpunit -d memory_limit=-1 --log-junit --coverage-html=coverage --coverage-clover ./coverage.xml coverage/junit.xml"
+        "coverage": "phpunit --log-junit coverage/junit.xml"
     }
 }
