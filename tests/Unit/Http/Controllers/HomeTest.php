@@ -97,6 +97,6 @@ class HomeTest extends TestCase
         $view = $this->homeControllerTest->changePassword($request);
         $this->assertEquals(route('user.home'), $view->headers->get('location'));
         $this->assertEquals('password', $view->getSession()->get('errors')->all()[0]);
-        $this->assertEquals(trans('wrong_password'), $view->getSession()->get('errors')->all()[2]);
+        $this->assertEquals(trans('wrong_password'), $view->getSession()->get('errors')->all()[1]);
     }
 }
