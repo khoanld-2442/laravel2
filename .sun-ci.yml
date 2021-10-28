@@ -55,3 +55,6 @@ jobs:
     paths:
     - coverage
     expires_in: 3 days
+  test_result:
+    type: junit
+    path: coverage/junit.xml
