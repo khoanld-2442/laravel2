@@ -58,3 +58,10 @@ jobs:
   test_result:
     type: junit
     path: coverage/junit.xml
+  
+ - name: viewlog
+   stage: test
+   image: sunasteriskrnd/php-workspace:7.4
+   script:
+  - cat log.txt
+ 
