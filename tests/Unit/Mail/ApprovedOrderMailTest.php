@@ -42,9 +42,9 @@ class ApprovedOrderMailTest extends TestCase
         Mail::fake();
         Mail::send($this->approvedOrder);
         $this->approvedOrder->build();
-       // Mail::assertSent(ApprovedOrderMail::class, function($mail) {
-          //  return $mail->subject == trans('email.approved_order.subject');
-        //});
+        Mail::assertSent(ApprovedOrderMail::class, function($mail) {
+            return $mail->subject == trans('email.approved_order.subject');
+        });
         $this->assertEquals($this->data['name'], $this->approvedOrder->buildViewData()['name']);
         $this->assertEquals($this->data['order'], $this->approvedOrder->buildViewData()['order']);
         $this->assertEquals($this->data['itemInOrder'], $this->approvedOrder->buildViewData()['itemInOrder']);
