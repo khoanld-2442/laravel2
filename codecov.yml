@@ -7,5 +7,5 @@ coverage:
       default:
         target: 10%
         threshold: 1%
-    path: off
+    path: coverage
   
