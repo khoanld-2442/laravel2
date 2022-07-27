@@ -58,10 +58,16 @@ jobs:
   test_result:
     type: junit
     path: coverage/junit.xml
+  release:
+    environment: develop
+    url: https://example.com
   
 - name: viewlog
   stage: test
   image: sunasteriskrnd/php-workspace:7.4
   script:
   - cat log.txt
+  release:
+    environment: Production
+    url: https://example.com
  
