@@ -71,3 +71,13 @@ jobs:
     environment: Production
     url: https://example.com
  
+- name: viewworkspace
+  stage: test
+  image: alpine
+  script:
+    - echo helo
+  workspace:
+    - persist:
+        root: sdasd
+        paths:
+          - foor
