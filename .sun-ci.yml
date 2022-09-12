@@ -1,25 +1,45 @@
+workspace: true
+
 stages:
-  - build
-  - test
+- Build
+- Test
 
 jobs:
-  - name: viewworkspace
-    stage: test
-    image: alpine
-    script:
-      - echo helo
-    workspace:
-      - persist:
-          root: sdasd
-          paths:
-            - foor
-      - attach: helo 
+- name: Run tests
+  stage: Build
+  image: alpine
+  services:
+  - redis:alpine
+  script:
+  - echo Hello
 
-  - name: viewlog
-    stage: test
-    image: sunasteriskrnd/php-workspace:7.4
-    script:
-    - cat log.txt
-    release:
-      environment: Production
-      url: https://example.com
+- name: Sleep
+  stage: Build
+  image: alpine
+  script:
+  - sleep 10
+
+- name: Wake up
+  stage: Build
+  image: alpine
+  script:
+  - echo Hello
+
+- name: Sleep again
+  stage: Build
+  image: alpine
+  script:
+  - sleep 10
+
+- name: Sleep more
+  stage: Test
+  image: alpine
+  script:
+  - sleep 10
+
+- name: Say bye!
+  stage: Test
+  image: alpine
+  script:
+  - sleep 10
+  - echo Bye
