@@ -12,7 +12,6 @@ jobs:
   - key: comopser_vendor_$CI_BRANCH
     paths:
       - vendor
-  - composer install
   script:
   - composer install
   after_script:
