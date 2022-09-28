@@ -5,15 +5,20 @@ stages:
   - test
 
 jobs:
-- name: build
-  stage: build
-  image: sunasteriskrnd/php-workspace:7.4
-  cache:
-  - key: comopser_vendor_$CI_BRANCH
-    paths:
-      - vendor
-  script:
-  - composer install
-  after_script:
-  - echo "Finish job"
- 
+  - name: build
+    stage: build
+    image: sunasteriskrnd/php-workspace:7.4
+    cache:
+    - key: comopser_vendor_$CI_BRANCH
+      paths:
+        - vendor
+    script:
+    - composer install
+    after_script:
+    - echo "Finish job"
+  
+  - name: restore cache
+    stage: build
+    image: alpine
+    script:
+      - echo hello
